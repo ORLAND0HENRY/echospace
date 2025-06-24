@@ -11,7 +11,8 @@
     .hidden { display: none; }
   </style>
 </head>
-<body class="flex">
+<body class="flex overflow-x-auto">
+
   <!-- Sidebar -->
   <aside class="w-64 bg-white p-4 shadow h-screen">
     <div class="mb-8">
@@ -46,7 +47,10 @@
         <p class="text-lg text-gray-700 max-w-2xl mx-auto">
           Empowering the youth. Impacting the community. Growing together in purpose, creativity, and faith.
         </p>
-        <h3><i>© 2025 EchoSpace by Orlando Henry. All rights reserved.</i></>
+        <footer class="mt-10 text-center text-sm text-gray-500">
+  <p>© 2025 EchoSpace by Orlando Henry. All rights reserved.</p>
+</footer>
+
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div class="bg-white shadow-lg rounded p-6 text-center">
@@ -232,12 +236,33 @@
 
   <!-- Tabs Script -->
   <script>
-    function showSection(sectionId) {
-      document.querySelectorAll('.section').forEach(section => section.classList.add('hidden'));
-      const target = document.getElementById(sectionId);
-      if (target) target.classList.remove('hidden');
+  function showSection(sectionId) {
+    // Hide all sections
+    document.querySelectorAll('.section').forEach(section => section.classList.add('hidden'));
+
+    // Remove active highlight from all nav links
+    document.querySelectorAll('aside nav a').forEach(link => {
+      link.classList.remove('text-red-500', 'font-semibold');
+      link.classList.add('text-gray-600');
+    });
+
+    // Show the selected section
+    const target = document.getElementById(sectionId);
+    if (target) target.classList.remove('hidden');
+
+    // Highlight the active sidebar link
+    const activeLink = Array.from(document.querySelectorAll('aside nav a')).find(link =>
+      link.getAttribute('onclick')?.includes(sectionId)
+    );
+    if (activeLink) {
+      activeLink.classList.add('text-red-500', 'font-semibold');
+      activeLink.classList.remove('text-gray-600');
     }
-    showSection('home');
-  </script>
+  }
+
+  // Load Home section by default
+  showSection('home');
+</script>
+
 </body>
 </html>

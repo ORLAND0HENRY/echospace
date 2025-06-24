@@ -13,72 +13,79 @@
 </head>
 <body class="min-h-screen">
 
-  <!-- Mobile Navbar -->
-  <div class="md:hidden flex justify-between items-center p-4 bg-white shadow">
-    <div class="flex items-center space-x-2">
-      <div class="bg-green-500 w-10 h-10 rounded-full text-white flex items-center justify-center font-bold">ES</div>
-      <div>
-        <h4 class="text-md font-semibold">EchoSpace</h4>
-        <p class="text-sm text-gray-500">@echospace_community</p>
+  <!-- Wrapper -->
+  <div class="flex flex-col md:flex-row">
+
+    <!-- Mobile Navbar -->
+    <div class="md:hidden flex justify-between items-center p-4 bg-white shadow w-full">
+      <div class="flex items-center space-x-2">
+        <div class="bg-green-500 w-10 h-10 rounded-full text-white flex items-center justify-center font-bold">ES</div>
+        <div>
+          <h4 class="text-md font-semibold">EchoSpace</h4>
+          <p class="text-sm text-gray-500">@echospace_community</p>
+        </div>
       </div>
+      <button id="menu-toggle" class="text-green-500 focus:outline-none text-3xl">☰</button>
     </div>
-    <button id="menu-toggle" class="text-green-500 focus:outline-none text-3xl">☰</button>
+
+    <!-- Sidebar -->
+    <aside id="sidebar" class="w-full md:w-64 p-4 bg-white shadow md:block hidden md:h-screen">
+      <nav class="space-y-3">
+        <a href="#" onclick="showSection('home')" class="block text-red-500 font-semibold">Home</a>
+        <a href="#" onclick="showSection('officials')" class="block text-gray-600">Our Officials</a>
+        <a href="#" onclick="showSection('events')" class="block text-gray-600">Upcoming Events</a>
+        <a href="#" onclick="showSection('choir')" class="block text-gray-600">Choir</a>
+        <a href="#" onclick="showSection('members')" class="block text-gray-600">Our Members</a>
+        <a href="#" onclick="showSection('about')" class="block text-gray-600">About Us</a>
+        <a href="#" onclick="showSection('departments')" class="block text-gray-600">Departments</a>
+        <a href="#" onclick="showSection('mission')" class="block text-gray-600">Our Mission</a>
+        <a href="#" onclick="showSection('feedback')" class="block text-gray-600">Send Feedback!</a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 overflow-auto p-6">
+      <div class="flex flex-col md:flex-row md:space-x-6">
+        <!-- Sections Stack Horizontally on Desktop -->
+        <!-- Home Section -->
+        <div id="home" class="section md:min-w-[500px] md:flex-1">
+          <div class="text-center mb-10">
+            <h1 class="text-4xl font-bold text-green-600 mb-4">Welcome to EchoSpace 🌍</h1>
+            <p class="text-lg text-gray-700 max-w-2xl mx-auto">
+              Empowering the youth. Impacting the community. Growing together in purpose, creativity, and faith.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-white shadow-lg rounded p-6 text-center">
+              <h3 class="text-xl font-semibold mb-2">🌱 Empowerment</h3>
+              <p class="text-sm text-gray-600">Trainings, mentorship, and resources to help every youth rise.</p>
+            </div>
+            <div class="bg-white shadow-lg rounded p-6 text-center">
+              <h3 class="text-xl font-semibold mb-2">🌍 Outreach</h3>
+              <p class="text-sm text-gray-600">Serving our community with purpose and compassion.</p>
+            </div>
+            <div class="bg-white shadow-lg rounded p-6 text-center">
+              <h3 class="text-xl font-semibold mb-2">🎵 Talent & Worship</h3>
+              <p class="text-sm text-gray-600">Celebrating God through music, arts, and creative gifts.</p>
+            </div>
+          </div>
+          <footer class="mt-10 text-center text-sm text-gray-500">
+            <i>© 2025 EchoSpace by Orlando Henry. All rights reserved.</i>
+          </footer>
+        </div>
+
+        <!-- Other Sections -->
+        <div id="officials" class="section hidden md:min-w-[500px] md:flex-1"><h2 class="text-xl font-bold">Officials Section</h2><p>Details about our officials...</p></div>
+        <div id="events" class="section hidden md:min-w-[500px] md:flex-1"><h2 class="text-xl font-bold">Events Section</h2><p>Upcoming events details...</p></div>
+        <div id="choir" class="section hidden md:min-w-[500px] md:flex-1"><h2 class="text-xl font-bold">Choir Section</h2><p>Information about the choir...</p></div>
+        <div id="members" class="section hidden md:min-w-[500px] md:flex-1"><h2 class="text-xl font-bold">Members Section</h2><p>Our team and members...</p></div>
+        <div id="about" class="section hidden md:min-w-[500px] md:flex-1"><h2 class="text-xl font-bold">About Us</h2><p>Who we are and what we do...</p></div>
+        <div id="departments" class="section hidden md:min-w-[500px] md:flex-1"><h2 class="text-xl font-bold">Departments</h2><p>Our different service departments...</p></div>
+        <div id="mission" class="section hidden md:min-w-[500px] md:flex-1"><h2 class="text-xl font-bold">Our Mission</h2><p>Our vision and mission statement...</p></div>
+        <div id="feedback" class="section hidden md:min-w-[500px] md:flex-1"><h2 class="text-xl font-bold">Feedback</h2><p>Contact us or share feedback...</p></div>
+      </div>
+    </main>
   </div>
-
-  <!-- Sidebar -->
-  <aside id="sidebar" class="w-full md:w-64 p-4 bg-white shadow md:block hidden">
-    <nav class="space-y-3">
-      <a href="#" onclick="showSection('home')" class="block text-red-500 font-semibold">Home</a>
-      <a href="#" onclick="showSection('officials')" class="block text-gray-600">Our Officials</a>
-      <a href="#" onclick="showSection('events')" class="block text-gray-600">Upcoming Events</a>
-      <a href="#" onclick="showSection('choir')" class="block text-gray-600">Choir</a>
-      <a href="#" onclick="showSection('members')" class="block text-gray-600">Our Members</a>
-      <a href="#" onclick="showSection('about')" class="block text-gray-600">About Us</a>
-      <a href="#" onclick="showSection('departments')" class="block text-gray-600">Departments</a>
-      <a href="#" onclick="showSection('mission')" class="block text-gray-600">Our Mission</a>
-      <a href="#" onclick="showSection('feedback')" class="block text-gray-600">Send Feedback!</a>
-    </nav>
-  </aside>
-
-  <!-- Main Content -->
-  <main class="p-6 overflow-auto">
-    <!-- Home Section -->
-    <div id="home" class="section">
-      <div class="text-center mb-10">
-        <h1 class="text-4xl font-bold text-green-600 mb-4">Welcome to EchoSpace 🌍</h1>
-        <p class="text-lg text-gray-700 max-w-2xl mx-auto">
-          Empowering the youth. Impacting the community. Growing together in purpose, creativity, and faith.
-        </p>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="bg-white shadow-lg rounded p-6 text-center">
-          <h3 class="text-xl font-semibold mb-2">🌱 Empowerment</h3>
-          <p class="text-sm text-gray-600">Trainings, mentorship, and resources to help every youth rise.</p>
-        </div>
-        <div class="bg-white shadow-lg rounded p-6 text-center">
-          <h3 class="text-xl font-semibold mb-2">🌍 Outreach</h3>
-          <p class="text-sm text-gray-600">Serving our community with purpose and compassion.</p>
-        </div>
-        <div class="bg-white shadow-lg rounded p-6 text-center">
-          <h3 class="text-xl font-semibold mb-2">🎵 Talent & Worship</h3>
-          <p class="text-sm text-gray-600">Celebrating God through music, arts, and creative gifts.</p>
-        </div>
-      </div>
-      <footer class="mt-10 text-center text-sm text-gray-500">
-        <i>© 2025 EchoSpace by Orlando Henry. All rights reserved.</i>
-      </footer>
-    </div>
-
-    <!-- Other Sections (all hidden by default) -->
-    <div id="officials" class="section hidden">...</div>
-    <div id="events" class="section hidden">...</div>
-    <div id="choir" class="section hidden">...</div>
-    <div id="members" class="section hidden">...</div>
-    <div id="about" class="section hidden">...</div>
-    <div id="departments" class="section hidden">...</div>
-    <div id="mission" class="section hidden">...</div>
-    <div id="feedback" class="section hidden">...</div>
-  </main>
 
   <!-- Script -->
   <script>

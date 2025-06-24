@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EchoSpace</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body { background-color: #f9fafb; }
+    .active-tab { border-bottom: 2px solid #ef4444; color: #29c59b; }
+    .hidden { display: none; }
+  </style>
+</head>
+<body class="flex">
+  <!-- Sidebar -->
+  <aside class="w-64 bg-white p-4 shadow h-screen">
+    <div class="mb-8">
+      <div class="flex items-center space-x-2">
+        <div class="bg-green-500 w-10 h-10 rounded-full text-white flex items-center justify-center font-bold">ES</div>
+        <div>
+          <h4 class="text-md font-semibold">EchoSpace</h4>
+          <p class="text-sm text-gray-500">@echospace_community</p>
+        </div>
+      </div>
+    </div>
+    <nav class="space-y-3">
+      <a href="#" onclick="showSection('home')" class="block text-red-500 font-semibold">Home</a>
+      <a href="#" onclick="showSection('officials')" class="block text-gray-600">Our Officials</a>
+      <a href="#" onclick="showSection('events')" class="block text-gray-600">Upcoming Events</a>
+      <a href="#" onclick="showSection('choir')" class="block text-gray-600">Choir</a>
+      <a href="#" onclick="showSection('members')" class="block text-gray-600">Our Members</a>
+      <a href="#" onclick="showSection('about')" class="block text-gray-600">About Us</a>
+      <a href="#" onclick="showSection('departments')" class="block text-gray-600">Departments</a>
+      <a href="#" onclick="showSection('mission')" class="block text-gray-600">Our Mission</a>
+      <a href="#" onclick="showSection('feedback')" class="block text-gray-600">Send Feedback!</a>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="flex-1 p-6 overflow-auto">
+
+    <!-- Home Section -->
+    <div id="home" class="section">
+      <div class="text-center mb-10">
+        <h1 class="text-4xl font-bold text-green-600 mb-4">Welcome to EchoSpace 🌍</h1>
+        <p class="text-lg text-gray-700 max-w-2xl mx-auto">
+          Empowering the youth. Impacting the community. Growing together in purpose, creativity, and faith.
+        </p>
+        <h3><i>© 2025 EchoSpace by Orlando Henry. All rights reserved.</i></h3>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white shadow-lg rounded p-6 text-center">
+          <h3 class="text-xl font-semibold mb-2">🌱 Empowerment</h3>
+          <p class="text-sm text-gray-600">Trainings, mentorship, and resources to help every youth rise.</p>
+        </div>
+        <div class="bg-white shadow-lg rounded p-6 text-center">
+          <h3 class="text-xl font-semibold mb-2">🌍 Outreach</h3>
+          <p class="text-sm text-gray-600">Serving our community with purpose and compassion.</p>
+        </div>
+        <div class="bg-white shadow-lg rounded p-6 text-center">
+          <h3 class="text-xl font-semibold mb-2">🎵 Talent & Worship</h3>
+          <p class="text-sm text-gray-600">Celebrating God through music, arts, and creative gifts.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Officials Section -->
+    <div id="officials" class="section hidden">
+      <h2 class="text-2xl font-bold mb-6">Our Officials</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white p-4 rounded shadow text-center">
+          <img class="w-20 h-20 mx-auto rounded-full mb-3" src="images/p.jpg" alt="Jane Mwangi">
+          <h3 class="font-semibold text-lg">Jane Mwangi</h3>
+          <p class="text-sm text-gray-500">Chairperson</p>
+          <p class="text-xs text-gray-600 mt-2">"Leading with purpose and passion."</p>
+        </div>
+        <div class="bg-white p-4 rounded shadow text-center">
+          <img class="w-20 h-20 mx-auto rounded-full mb-3" src="images/e.jpg" alt="Brian Otieno">
+          <h3 class="font-semibold text-lg">Brian Otieno</h3>
+          <p class="text-sm text-gray-500">Secretary</p>
+          <p class="text-xs text-gray-600 mt-2">"Detail and discipline drive us."</p>
+        </div>
+        <div class="bg-white p-4 rounded shadow text-center">
+          <img class="w-20 h-20 mx-auto rounded-full mb-3" src="images/e.jpg" alt="Sarah Wanjiru">
+          <h3 class="font-semibold text-lg">Sarah Wanjiru</h3>
+          <p class="text-sm text-gray-500">Treasurer</p>
+          <p class="text-xs text-gray-600 mt-2">"Every coin counts for change."</p>
+        </div>
+        <div class="bg-white p-4 rounded shadow text-center">
+          <img class="w-20 h-20 mx-auto rounded-full mb-3" src="images/p.jpg" alt="David Njoroge">
+          <h3 class="font-semibold text-lg">David Njoroge</h3>
+          <p class="text-sm text-gray-500">Coordinator</p>
+          <p class="text-xs text-gray-600 mt-2">"Together, we achieve more."</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Events Section -->
+    <div id="events" class="section hidden">
+      <h2 class="text-2xl font-bold mb-6">Upcoming Events</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white shadow rounded-lg overflow-hidden">
+          <div class="relative">
+            <img src="images/youth summit.jpg" alt="Youth Empowerment Summit" class="w-full h-40 object-cover">
+            <div class="absolute top-2 left-2 bg-red-600 text-white px-2 py-1 text-xs rounded">DEC 7–8, 2025</div>
+          </div>
+          <div class="p-4">
+            <h4 class="text-md font-semibold">Youth Empowerment Summit</h4>
+            <p class="text-sm text-gray-500 mb-2">The Hub, Karen</p>
+            <span class="inline-block text-xs text-white bg-red-500 px-2 py-1 rounded">Workshops, Leadership, Tech</span>
+          </div>
+        </div>
+
+        <div class="bg-white shadow rounded-lg overflow-hidden">
+          <div class="relative">
+            <img src="images/talent.jpg" alt="Talent Sunday" class="w-full h-40 object-cover">
+            <div class="absolute top-2 left-2 bg-red-600 text-white px-2 py-1 text-xs rounded">Last Sunday Monthly</div>
+          </div>
+          <div class="p-4">
+            <h4 class="text-md font-semibold">Talent Sunday</h4>
+            <p class="text-sm text-gray-500 mb-2">Main Church Stage</p>
+            <span class="inline-block text-xs text-white bg-red-500 px-2 py-1 rounded">Open Mic & Performances</span>
+          </div>
+        </div>
+
+        <div class="bg-white shadow rounded-lg overflow-hidden">
+          <div class="relative">
+            <img src="images/thanskgivng.jpg" alt="Thanksgiving Bash" class="w-full h-40 object-cover">
+            <div class="absolute top-2 left-2 bg-red-600 text-white px-2 py-1 text-xs rounded">DEC 31, 2025</div>
+          </div>
+          <div class="p-4">
+            <h4 class="text-md font-semibold">End-Year Thanksgiving Bash</h4>
+            <p class="text-sm text-gray-500 mb-2">Kangemi Gardens</p>
+            <span class="inline-block text-xs text-white bg-red-500 px-2 py-1 rounded">Food • Games • Awards</span>
+          </div>
+        </div>
+
+        <div class="bg-white shadow rounded-lg overflow-hidden">
+          <div class="relative">
+            <img src="images/bistudy.jpg" alt="Bible Study Camp" class="w-full h-40 object-cover">
+            <div class="absolute top-2 left-2 bg-red-600 text-white px-2 py-1 text-xs rounded">FEB 2026</div>
+          </div>
+          <div class="p-4">
+            <h4 class="text-md font-semibold">Bible Study Camp</h4>
+            <p class="text-sm text-gray-500 mb-2">Naivasha Lakeview</p>
+            <span class="inline-block text-xs text-white bg-red-500 px-2 py-1 rounded">Overnight Trip & Teaching</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Choir Section -->
+    <div id="choir" class="section hidden">
+      <h2 class="text-2xl font-bold mb-4">EchoSpace Choir</h2>
+      <div class="bg-white p-6 rounded shadow">
+        <p class="text-gray-700 mb-2">🎶 Join the EchoSpace Choir every Saturday at 4:00 PM for vibrant rehearsals and worship preparation.</p>
+        <p class="text-gray-600 text-sm">Whether you sing, play an instrument, or want to serve in worship, there's a place for you here.</p>
+      </div>
+    </div>
+
+    <!-- Members Section -->
+    <div id="members" class="section hidden">
+      <h2 class="text-2xl font-bold mb-4">Our Members</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <div class="bg-white rounded shadow p-4 text-center">
+          <img class="w-20 h-20 mx-auto rounded-full mb-2" src="images/pi.jpg" alt="Kevin Mwangi">
+          <h4 class="font-semibold">Kevin Mwangi</h4>
+          <p class="text-xs text-gray-500">Media Team</p>
+        </div>
+        <div class="bg-white rounded shadow p-4 text-center">
+          <img class="w-20 h-20 mx-auto rounded-full mb-2" src="images/pi.jpg" alt="Lucy Wambui">
+          <h4 class="font-semibold">Lucy Wambui</h4>
+          <p class="text-xs text-gray-500">Choir</p>
+        </div>
+        <div class="bg-white rounded shadow p-4 text-center">
+          <img class="w-20 h-20 mx-auto rounded-full mb-2" src="images/pi.jpg" alt="John Kariuki">
+          <h4 class="font-semibold">John Kariuki</h4>
+          <p class="text-xs text-gray-500">Outreach Team</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- About Section -->
+    <div id="about" class="section hidden">
+      <h2 class="text-2xl font-bold mb-4">About Us</h2>
+      <p>EchoSpace is a community-driven organization focused on impact, unity, and change.</p>
+    </div>
+
+    <!-- Departments Section -->
+    <div id="departments" class="section hidden">
+      <h2 class="text-2xl font-bold mb-4">Departments</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="bg-white rounded shadow p-4">
+          <h3 class="font-semibold text-lg mb-1">🗣️ Outreach & Evangelism</h3>
+          <p class="text-sm text-gray-600">Leading missions, community service, and spreading hope locally and beyond.</p>
+        </div>
+        <div class="bg-white rounded shadow p-4">
+          <h3 class="font-semibold text-lg mb-1">🎶 Music & Choir</h3>
+          <p class="text-sm text-gray-600">Organizing worship sessions, vocals, and live performances for events.</p>
+        </div>
+        <div class="bg-white rounded shadow p-4">
+          <h3 class="font-semibold text-lg mb-1">🎥 Media & Tech</h3>
+          <p class="text-sm text-gray-600">Handles video editing, livestreaming, and tech support during sessions.</p>
+        </div>
+        <div class="bg-white rounded shadow p-4">
+          <h3 class="font-semibold text-lg mb-1">📋 Planning & Logistics</h3>
+          <p class="text-sm text-gray-600">Manages venues, schedules, budgets, transport, and behind-the-scenes work.</p>
+        </div>
+        <div class="bg-white rounded shadow p-4">
+          <h3 class="font-semibold text-lg mb-1">💬 Communication & PR</h3>
+          <p class="text-sm text-gray-600">Designs posters, handles announcements, and runs EchoSpace's social media.</p>
+        </div>
+        <div class="bg-white rounded shadow p-4">
+          <h3 class="font-semibold text-lg mb-1">📚 Discipleship & Training</h3>
+          <p class="text-sm text-gray-600">Leads Bible study groups, mentorship, and personal development tracks.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mission Section -->
+    <div id="mission" class="section hidden">
+      <h2 class="text-2xl font-bold mb-4">Our Mission</h2>
+      <p>To empower youth, build community, and inspire positive transformation.</p>
+    </div>
+
+    <!-- Feedback Section -->
+    <div id="feedback" class="section hidden">
+      <h2 class="text-2xl font-bold mb-4">Send Feedback!</h2>
+      <p>We'd love to hear from you. Contact us via email or social media.</p>
+    </div>
+  </main>
+
+  <!-- Tabs Script -->
+  <script>
+    function showSection(sectionId) {
+      document.querySelectorAll('.section').forEach(section => section.classList.add('hidden'));
+      const target = document.getElementById(sectionId);
+      if (target) target.classList.remove('hidden');
+    }
+    showSection('home');
+  </script>
+</body>
+</html>
